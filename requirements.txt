@@ -1,0 +1,85 @@
+absl-py @ file:///croot/absl-py_1714140470852/work
+accelerate==0.21.0
+aiohappyeyeballs==2.4.6
+aiohttp==3.11.12
+aiosignal==1.3.2
+annotated-types==0.7.0
+async-timeout==5.0.1
+attrs==25.1.0
+bitsandbytes==0.45.2
+certifi==2025.1.31
+charset-normalizer==3.4.1
+click==8.1.8
+docker-pycreds==0.4.0
+filelock==3.17.0
+frozenlist==1.5.0
+fsspec==2025.2.0
+gitdb==4.0.12
+GitPython==3.1.44
+grpcio @ file:///home/conda/feedstock_root/build_artifacts/grpc-split_1741419224004/work
+huggingface-hub==0.28.1
+idna==3.10
+interchange==2021.0.4
+Jinja2==3.1.5
+lightning-utilities==0.12.0
+Markdown @ file:///croot/markdown_1671541909495/work
+MarkupSafe @ file:///croot/markupsafe_1738584038848/work
+monotonic==1.6
+mpmath==1.3.0
+multidict==6.1.0
+networkx==3.4.2
+numpy @ file:///croot/numpy_and_numpy_base_1725470312869/work/dist/numpy-2.0.1-cp310-cp310-linux_x86_64.whl#sha256=fdaaeaf4fd89442562da25e51a10ac3bcde58d8c62944d14f5e9856baac7ac07
+nvidia-cublas-cu12==12.4.5.8
+nvidia-cuda-cupti-cu12==12.4.127
+nvidia-cuda-nvrtc-cu12==12.4.127
+nvidia-cuda-runtime-cu12==12.4.127
+nvidia-cudnn-cu12==9.1.0.70
+nvidia-cufft-cu12==11.2.1.3
+nvidia-curand-cu12==10.3.5.147
+nvidia-cusolver-cu12==11.6.1.9
+nvidia-cusparse-cu12==12.3.1.170
+nvidia-cusparselt-cu12==0.6.2
+nvidia-nccl-cu12==2.21.5
+nvidia-nvjitlink-cu12==12.4.127
+nvidia-nvtx-cu12==12.4.127
+packaging @ file:///croot/packaging_1734472117206/work
+pandas==2.2.3
+pansi==2024.11.0
+peft==0.5.0
+pillow==11.1.0
+platformdirs==4.3.6
+propcache==0.2.1
+protobuf @ file:///home/conda/feedstock_root/build_artifacts/protobuf_1741124568415/work/bazel-bin/python/dist/protobuf-5.29.3-cp310-abi3-linux_x86_64.whl#sha256=afe363dc4c34775b243aadb0083a4a4dc7d1a532a3d3084fcebb1eecb1f3bdd9
+psutil==6.1.1
+py2neo==2021.2.4
+pydantic==2.10.6
+pydantic_core==2.27.2
+Pygments==2.19.1
+python-dateutil==2.9.0.post0
+pytorch-lightning==2.5.0.post0
+pytz==2025.1
+PyYAML==6.0.2
+regex==2024.11.6
+requests==2.32.3
+safetensors==0.5.2
+sentencepiece==0.2.0
+sentry-sdk==2.21.0
+setproctitle==1.3.4
+six @ file:///tmp/build/80754af9/six_1644875935023/work
+smmap==5.0.2
+sympy==1.13.1
+tensorboard @ file:///home/conda/feedstock_root/build_artifacts/tensorboard_1740522445235/work/tensorboard-2.19.0-py3-none-any.whl#sha256=5e71b98663a641a7ce8a6e70b0be8e1a4c0c45d48760b076383ac4755c35b9a0
+tensorboard_data_server @ file:///croot/tensorboard-data-server_1724172556187/work/tensorboard_data_server-0.7.0-py3-none-manylinux2014_x86_64.whl#sha256=4428d660733184391dab7b6b6a953467b614b984df0cc1baf3d8c5d3d4ecf29d
+tokenizers==0.13.3
+torch==2.6.0
+torchmetrics==1.6.1
+tqdm==4.67.1
+transformers==4.33.3
+triton==3.2.0
+typing_extensions==4.12.2
+tzdata==2025.1
+urllib3==2.3.0
+wandb==0.19.6
+Werkzeug @ file:///croot/werkzeug_1737448706492/work
+yacs==0.1.8
+yarl==1.18.3
