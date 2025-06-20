@@ -1,4 +1,12 @@
-# LlamaRec-
+# LlamaRec-LKG-RAG
+
+This repository is the impelementation for the <font size='5'>**LlamaRec-LKG-RAG: A Single-Pass, Learnable Knowledge Graph-RAG Framework for LLM-Based Ranking**</font> <a href='https://www.arxiv.org/abs/2506.07449'><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a>
+
+<p align="center">
+      <img src=model.png width=800, height=500>
+</p>
+
+Recent advances in Large Language Models (LLMs) have driven their adoption in recommender systems through Retrieval-Augmented Generation (RAG) frameworks. However, existing RAG approaches predominantly rely on flat, similarity-based retrieval that fails to leverage the rich relational structure inherent in user-item interactions. We introduce LlamaRec-LKG-RAG, a novel single-pass, end-to-end trainable framework that integrates personalized knowledge graph context into LLM-based recommendation ranking. Our approach extends the LlamaRec architecture by incorporating a lightweight user preference module that dynamically identifies salient relation paths within a heterogeneous knowledge graph constructed from user behavior and item metadata. These personalized subgraphs are seamlessly integrated into prompts for a fine-tuned Llama-2 model, enabling efficient and interpretable recommendations through a unified inference step. Comprehensive experiments on ML-100K and Amazon Beauty datasets demonstrate consistent and significant improvements over LlamaRec across key ranking metrics (MRR, NDCG, Recall). LlamaRec-LKG-RAG demonstrates the critical value of structured reasoning in LLM-based recommendations and establishes a foundation for scalable, knowledge-aware personalization in next-generation recommender systems.
 
 ## Setup Instructions
 
@@ -9,7 +17,7 @@ conda env create -f environment.yml
 ```
 Then
 ```sh
-conda activate llamarec-lgrag
+conda activate llamarec-lkg-rag
 ```
 
 ### 2. Training the Retriever Model
@@ -34,10 +42,22 @@ You also need to create an account on Neo4j Aura. Details on how to create an ac
 1. Create an AuraDB Professional instance, as the graph for the Beauty dataset is large. There is a 14-day trial for AuraDB Professional, which is extendable to 21 days.
 2. Run the `create_graph_beauty.ipynb` notebook to create the graph. Please ensure that your Neo4j credentials are set in the notebook. A snapshot of the graph is available as neo4j-beauty.backup, which you can restore instead of recreating the graph (restoring is faster). For instructions on how to restore a backup file in Neo4j, refer to the [Backup and Restore Documentation](https://neo4j.com/docs/aura/managing-instances/backup-restore-export/).
 
+### 3. Training
+
+
 ## Acknowledgement
 + [LlamaRec](https://github.com/Yueeeeeeee/LlamaRec) This repository is built upon LlamaRec.
 
-
-## License
-This repository is licensed under the [BSD 3-Clause License](LICENSE).
-
+## Citation
+Please consider citing the following paper if you use our method in your research:
+```bibtex
+@misc{azizi2025llamareclkgragsinglepasslearnableknowledge,
+      title={LlamaRec-LKG-RAG: A Single-Pass, Learnable Knowledge Graph-RAG Framework for LLM-Based Ranking}, 
+      author={Vahid Azizi and Fatemeh Koochaki},
+      year={2025},
+      eprint={2506.07449},
+      archivePrefix={arXiv},
+      primaryClass={cs.IR},
+      url={https://arxiv.org/abs/2506.07449}, 
+}
+```
