@@ -14,9 +14,6 @@ Recent advances in Large Language Models (LLMs) have driven their adoption in re
 To set up the required environment, run the following command:
 ```sh
 conda env create -f environment.yml
-```
-Then
-```sh
 conda activate llamarec-lkg-rag
 ```
 
@@ -45,11 +42,11 @@ You also need to create an account on Neo4j Aura. Details on how to create an ac
 ### 4. Training
 You can run training by setting all parameters through the command line. However, since there are many parameters, we recommend editing them directly in `config.py` for easier configuration.
 
-## 1. Set Neo4j Credentials
+4.1. Set Neo4j Credentials
 
 Open [config.py](LlamaRec/config.py#L181-L183) and add your Neo4j credentials at **lines 181–183**.
 
-## 2. Configure Training Mode
+4.2. Configure Training Mode
 
 Choose your training configuration by setting the following flags in `config.py`:
 
@@ -68,7 +65,7 @@ Choose your training configuration by setting the following flags in `config.py`
   llm_train_with_relation = False
   llm_train_with_relation_score = False
 
-## 3. 🚀 Run Training
+4.3. 🚀 Run Training
 Use the following command to start training:
   ```python
   python train.py --retriever_path PATH_TO_RETRIEVER
