@@ -8,7 +8,7 @@ RAW_DATASET_ROOT_FOLDER = 'data'
 EXPERIMENT_ROOT = 'experiments'
 STATE_DICT_KEY = 'model_state_dict'
 OPTIMIZER_STATE_DICT_KEY = 'optimizer_state_dict'
-PROJECT_NAME = 'llmrec-lgrag'
+PROJECT_NAME = 'llmrec-lkgrag'
 
 
 def set_template(args):
@@ -178,9 +178,9 @@ parser.add_argument('--lora_micro_batch_size', type=int, default=16)
 ################
 # Neo4j
 ################
-parser.add_argument('--neo4j_uri', type=str, default="neo4j+s://6a7ece54.databases.neo4j.io")
+parser.add_argument('--neo4j_uri', type=str, default="YOUR_NEO4J_URI")
 parser.add_argument('--neo4j_user_name', type=str, default="neo4j")
-parser.add_argument('--neo4j_password', type=str, default="uSI0r2K-TnNBYdJ3jNjVuHqrEX3XKUaUSjY05rAT8ps")
+parser.add_argument('--neo4j_password', type=str, default="YOUR_NEO4J_PASSWORD")
 
 ################
 

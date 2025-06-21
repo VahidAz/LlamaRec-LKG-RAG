@@ -42,22 +42,60 @@ You also need to create an account on Neo4j Aura. Details on how to create an ac
 1. Create an AuraDB Professional instance, as the graph for the Beauty dataset is large. There is a 14-day trial for AuraDB Professional, which is extendable to 21 days.
 2. Run the `create_graph_beauty.ipynb` notebook to create the graph. Please ensure that your Neo4j credentials are set in the notebook. A snapshot of the graph is available as neo4j-beauty.backup, which you can restore instead of recreating the graph (restoring is faster). For instructions on how to restore a backup file in Neo4j, refer to the [Backup and Restore Documentation](https://neo4j.com/docs/aura/managing-instances/backup-restore-export/).
 
-### 3. Training
+### 4. Training
+You can run training by setting all parameters through the command line. However, since there are many parameters, we recommend editing them directly in `config.py` for easier configuration.
+
+## 1. Set Neo4j Credentials
+
+Open [config.py](LlamaRec/config.py#L181-L183) and add your Neo4j credentials at **lines 181–183**.
+
+## 2. Configure Training Mode
+
+Choose your training configuration by setting the following flags in `config.py`:
+
+- **Train LlamaRec-LKG-RAG with both [relation](LlamaRec/config.py#L147) and [user preference modules](LlamaRec/config.py#L152):**
+  ```python
+  llm_train_with_relation = True
+  llm_train_with_relation_score = True
+
+- **Train LlamaRec-LKG-RAG with only [relation](LlamaRec/config.py#L147) (no [user preferences](LlamaRec/config.py#L152)):
+  ```python
+  llm_train_with_relation = True
+  llm_train_with_relation_score = False
+
+- **Train original LlamaRec (no [relation](LlamaRec/config.py#L147) or [user preference modules](LlamaRec/config.py#L152)):
+  ```python
+  llm_train_with_relation = False
+  llm_train_with_relation_score = False
+
+## 3. 🚀 Run Training
+Use the following command to start training:
+  ```python
+  python train.py --retriever_path PATH_TO_RETRIEVER
+```
+
+> **Note:**  
+> - Replace `PATH_TO_RETRIEVER` with the path to the retriever generated in the previous step.  
+> - You must have access to [`meta-llama/Llama-2-7b-hf`](https://huggingface.co/meta-llama/Llama-2-7b-hf) on the Hugging Face Hub to run this training.  
+> - After training is completed, evaluation is automatically performed.  
+> - All model checkpoints, logs, and results will be saved under the `./experiments` directory.
 
 
 ## Acknowledgement
 + [LlamaRec](https://github.com/Yueeeeeeee/LlamaRec) This repository is built upon LlamaRec.
 
-## Citation
-Please consider citing the following paper if you use our method in your research:
+## 📚 Citation
+
+If you use this project in your research, please cite:
+
 ```bibtex
 @misc{azizi2025llamareclkgragsinglepasslearnableknowledge,
-      title={LlamaRec-LKG-RAG: A Single-Pass, Learnable Knowledge Graph-RAG Framework for LLM-Based Ranking}, 
-      author={Vahid Azizi and Fatemeh Koochaki},
-      year={2025},
-      eprint={2506.07449},
-      archivePrefix={arXiv},
-      primaryClass={cs.IR},
-      url={https://arxiv.org/abs/2506.07449}, 
+  title={LlamaRec-LKG-RAG: A Single-Pass, Learnable Knowledge Graph-RAG Framework for LLM-Based Ranking},
+  author={Vahid Azizi and Fatemeh Koochaki},
+  year={2025},
+  eprint={2506.07449},
+  archivePrefix={arXiv},
+  primaryClass={cs.IR},
+  url={https://arxiv.org/abs/2506.07449}
 }
 ```
