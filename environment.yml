@@ -1,4 +1,4 @@
-name: llamarec-lgrag
+name: llamarec-lkg-rag
 channels:
   - conda-forge
   - defaults
